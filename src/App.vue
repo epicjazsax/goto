@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import TitleCard from './components/TitleCard.vue'
+import SearchBox from './components/SearchBox.vue'
 import '/node_modules/tachyons/css/tachyons.css'
 </script>
 
@@ -9,7 +10,8 @@ import '/node_modules/tachyons/css/tachyons.css'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld/>
+      <TitleCard/>
+      <SearchBox/>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
