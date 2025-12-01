@@ -1,0 +1,19 @@
+{
+    "aliases": [
+        {
+            "alias": "github",
+            "url": "github.com",
+            "owner": "jzakrajsek"
+        },
+        {
+            "alias": "mdn",
+            "url": "developer.mozilla.org",
+            "owner": "jzakrajsek"
+        },
+        {
+            "alias": "wikipedia",
+            "url": "wikipedia.org",
+            "owner": "jzakrajsek"
+        }
+    ]
+}
