@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import './goto-database.json'
+//const database = JSON.parse('./goto-database.json')
+//const results = database.toString()
+const results = 'HELLO WORLD'
 
-const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 </script>
 
 <template>
@@ -9,7 +10,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     Results:
   </h1>
   <div class='results' id='results'>
-    This is where the results will go
+    {{ results }}
   </div>
 </template>
 
