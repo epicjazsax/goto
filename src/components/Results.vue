@@ -1,7 +1,26 @@
-<script setup lang="ts">
+<script>
 //const database = JSON.parse('./goto-database.json')
 //const results = database.toString()
-const results = 'HELLO WORLD'
+const results = 'HELLO WORLD';
+
+export default {
+  data() {
+    return {
+      entries: ['first', 'second']
+    };
+  },
+  async mounted() {
+    try {
+      const response = await fetch('./goto-database.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      this.entries = await response.json();
+    } catch (error) {
+      console.error("Could not fetch entries:", error);
+    }
+  }
+}
 
 </script>
 
@@ -10,7 +29,11 @@ const results = 'HELLO WORLD'
     Results:
   </h1>
   <div class='results' id='results'>
-    {{ results }}
+    <ul>
+      <li v-for="entry in entries">
+        {{ entry }}
+      </li>
+    </ul>
   </div>
 </template>
 
