@@ -11,11 +11,15 @@ export default {
   },
   async mounted() {
     try {
-      const response = await fetch('./goto-database.json');
+      const response = await fetch('/goto-database.json');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      this.entries = await response.json();
+      try {
+        this.entries = await response.json()
+      } catch (error) {
+        console.error('Error parsing json response:', error)
+      }
     } catch (error) {
       console.error("Could not fetch entries:", error);
     }
