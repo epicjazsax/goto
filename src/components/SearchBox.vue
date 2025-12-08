@@ -1,10 +1,17 @@
+<script>
+
+</script>
+
 <template>
-  <div class="search-bar">
+  <div class='searchBox'>
     <h3>
+      <p>Current search is: {{ searchBox }}</p>
       <input
+        v-model='searchBox'
         className='b--green bg-lightest-blue'
         type='search'
         placeholder='enter search term here'
+        @input='console.log("input has changed")'
       />
     </h3>
   </div>
