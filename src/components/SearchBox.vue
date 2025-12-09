@@ -1,4 +1,7 @@
-<script>
+<script setup>
+import { ref } from 'vue'
+
+const searchBox = ref('')
 
 </script>
 
