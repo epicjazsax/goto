@@ -2,14 +2,15 @@ import { useEffect, useState } from 'react'
 import SearchBox from './components/SearchBox'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import 'tachyons'
-import './App.css'
 import CardList from './components/CardList'
 import ErrorBoundary from './components/ErrorBoundary'
+import { filterEntriesByString } from './components/FilteredEntries'
+import 'tachyons'
+import './App.css'
 
 function App() {
     const [searchField, setSearchField] = useState('')
-    const [entries, setEntries] = useState({})
+    const [entries, setEntries] = useState([])
 
     useEffect(() => {
         fetch('/goto-database.json')
@@ -22,6 +23,8 @@ function App() {
     const onSearchFieldChange = (event) => {
         setSearchField(event.target.value);
     }
+
+    const filteredEntries = filterEntriesByString(entries, searchField)
 
     return !entries.length ?
         <div>Loading...</div> :
@@ -41,7 +44,7 @@ function App() {
                     Search Term is: {searchField}
                 </h3>
                 <ErrorBoundary>
-                    <CardList entries={entries} />
+                    <CardList entries={filteredEntries} />
                 </ErrorBoundary>
             </>
         )
