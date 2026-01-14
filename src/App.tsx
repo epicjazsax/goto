@@ -5,7 +5,7 @@ import viteLogo from '/vite.svg'
 import CardList from './components/CardList'
 import ErrorBoundary from './components/ErrorBoundary'
 import { filterEntriesByString } from './components/FilteredEntries'
-import 'tachyons'
+import 'tachyons/css/tachyons.min.css'
 import './App.css'
 
 function App() {
