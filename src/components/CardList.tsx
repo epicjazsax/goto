@@ -1,6 +1,6 @@
 import Card from './Card';
 
-const createCardFor = (entry) => {
+const createCardFor = (entry: { alias: string; url: string; owner: string }) => {
     return (
         <Card
             key={entry.alias}

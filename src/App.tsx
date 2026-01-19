@@ -20,7 +20,7 @@ function App() {
             })
     }, [])
 
-    const onSearchFieldChange = (event) => {
+    const onSearchFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchField(event.target.value);
     }
 
