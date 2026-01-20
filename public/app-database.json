@@ -1,0 +1,102 @@
+[
+    {
+        "package_name": "VersaLab",
+        "location": "//trantor/software/release/VersaLab/Current Release",
+        "maintainer": "tzakrajsek"
+    },
+    {
+        "package_name": "VersaLab.Firmware",
+        "location": "https://ghostnet/products/versalab/versalabfw/-/releases",
+        "maintainer": "tzakrajsek"
+    },
+    {
+        "package_name": "DynaCool",
+        "location": "//trantor/software/release/DynaCool/CurrentRelease",
+        "maintainer": "tzakrajsek"
+    },
+    {
+        "package_name": "OptiCool",
+        "location": "//trantor/software/release/OptiCool/CurrentRelease",
+        "maintainer": "dinesh"
+    },
+    {
+        "package_name": "FusionScope",
+        "location": "//trantor/software/release/FusionScope",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "ATL",
+        "location": "//trantor/software/release/ATL",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "Compressors",
+        "location": "//trantor/software/release/Compressors",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "Cryocooler_Software",
+        "location": "//trantor/software/release/Cryocooler_Software",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "DC5000",
+        "location": "//trantor/software/release/DC5000",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "FinalTest",
+        "location": "//trantor/software/release/FinalTest",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "He Recovery",
+        "location": "//trantor/software/release/He Recovery",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "Installations",
+        "location": "//trantor/software/release/Installations",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "MPMS3",
+        "location": "//trantor/software/release/MPMS3",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "PPMS_Software",
+        "location": "//trantor/software/release/PPMS_Software",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "Production",
+        "location": "//trantor/software/release/Production",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "QdCAN",
+        "location": "//trantor/software/release/QdCAN",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "TempCals",
+        "location": "//trantor/software/release/TempCals",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "TestRunner",
+        "location": "//trantor/software/release/TestRunner",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "Utilities",
+        "location": "//trantor/software/release/Utilities",
+        "maintainer": "TBD"
+    },
+    {
+        "package_name": "VacuumGauge",
+        "location": "//trantor/software/release/VacuumGauge",
+        "maintainer": "TBD"
+    }
+]

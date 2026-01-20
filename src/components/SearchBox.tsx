@@ -4,6 +4,7 @@ const SearchBox = ({ searchChange }) => {
             <input
                 className='pa3 ba b--green'
                 type='search'
+                size='50'
                 placeholder='enter search term here'
                 onChange={searchChange}
             />

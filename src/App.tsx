@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react'
 import SearchBox from './components/SearchBox'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import cryoLogo from './assets/snowflake.png'
+import qdLogo_dark from './assets/qd_logo_main_dark.png'
+import qdLogo from './assets/qd_logo_main.png'
+import qdLogo1 from './assets/qd-logo1.png'
+import qdLogo3 from './assets/qd-logo3.png'
+import qdLogoGif1 from './assets/logo_anim_play_once.gif'
+
+
 import CardList from './components/CardList'
 import ErrorBoundary from './components/ErrorBoundary'
 import { filterEntriesByString } from './components/FilteredEntries'
@@ -13,7 +19,7 @@ function App() {
     const [entries, setEntries] = useState([])
 
     useEffect(() => {
-        fetch('/goto-database.json')
+        fetch('/app-database.json')
             .then(res => res.json())
             .then(data => {
                 setEntries(data)
@@ -30,18 +36,27 @@ function App() {
         <div>Loading...</div> :
         (
             <>
-                <div>
-                    <a href="https://vite.dev" target="_blank">
-                        <img src={viteLogo} className="logo" alt="Vite logo" />
+                {/*
+                <div className="logo-container">
+                    <a href="https://qdusa.com/" target="_blank">
+                        <img src={qdLogoGif1} className="logo" alt="Quantum Design" />
                     </a>
-                    <a href="https://react.dev" target="_blank">
-                        <img src={reactLogo} className="logo react" alt="React logo" />
+                    <a href="https://qdusa.com/" target="_blank">
+                        <img src={cryoLogo} className="logo react" alt="Cryo" />
                     </a>
                 </div>
-                <h1>Go-To Manager</h1>
+                */}
+
+                <div className="logo-container">
+                    <a href="https://qdusa.com/" target="_blank">
+                        <img src={qdLogo_dark} className="logo" alt="Quantum Design" />
+                    </a>
+
+                    <h1>Release Center</h1>
+                </div>
                 <h3>
                     <SearchBox searchChange={onSearchFieldChange} />
-                    Search Term is: {searchField}
+                    {/* Search Term is: {searchField} */}
                 </h3>
                 <ErrorBoundary>
                     <CardList entries={filteredEntries} />
