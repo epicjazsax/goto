@@ -21,82 +21,66 @@
     },
     {
         "package_name": "FusionScope",
-        "location": "//trantor/software/release/FusionScope",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/FusionScope"
     },
     {
         "package_name": "ATL",
-        "location": "//trantor/software/release/ATL",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/ATL"
     },
     {
         "package_name": "Compressors",
-        "location": "//trantor/software/release/Compressors",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/Compressors"
     },
     {
         "package_name": "Cryocooler_Software",
-        "location": "//trantor/software/release/Cryocooler_Software",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/Cryocooler_Software"
     },
     {
         "package_name": "DC5000",
-        "location": "//trantor/software/release/DC5000",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/DC5000"
     },
     {
         "package_name": "FinalTest",
-        "location": "//trantor/software/release/FinalTest",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/FinalTest"
     },
     {
         "package_name": "He Recovery",
-        "location": "//trantor/software/release/He Recovery",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/He Recovery"
     },
     {
         "package_name": "Installations",
-        "location": "//trantor/software/release/Installations",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/Installations"
     },
     {
         "package_name": "MPMS3",
-        "location": "//trantor/software/release/MPMS3",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/MPMS3"
     },
     {
         "package_name": "PPMS_Software",
-        "location": "//trantor/software/release/PPMS_Software",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/PPMS_Software"
     },
     {
         "package_name": "Production",
-        "location": "//trantor/software/release/Production",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/Production"
     },
     {
         "package_name": "QdCAN",
-        "location": "//trantor/software/release/QdCAN",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/QdCAN"
     },
     {
         "package_name": "TempCals",
-        "location": "//trantor/software/release/TempCals",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/TempCals"
     },
     {
         "package_name": "TestRunner",
-        "location": "//trantor/software/release/TestRunner",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/TestRunner"
     },
     {
         "package_name": "Utilities",
-        "location": "//trantor/software/release/Utilities",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/Utilities"
     },
     {
         "package_name": "VacuumGauge",
-        "location": "//trantor/software/release/VacuumGauge",
-        "maintainer": "TBD"
+        "location": "//trantor/software/release/VacuumGauge"
     }
 ]

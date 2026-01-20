@@ -1,6 +1,16 @@
 import Card from './Card';
 
-const createCardFor = (entry: { alias: string; url: string; owner: string }) => {
+interface Entry {
+    package_name: string;
+    location: string;
+    maintainer: string;
+}
+
+interface CardListProps {
+    entries: Entry[];
+}
+
+const createCardFor = (entry: Entry) => {
     return (
         <Card
             key={entry.package_name}
@@ -11,7 +21,7 @@ const createCardFor = (entry: { alias: string; url: string; owner: string }) => 
     );
 }
 
-const CardList = ({ entries }) => {
+const CardList = ({ entries }: CardListProps) => {
     return (
         <>
             {

@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import SearchBox from './components/SearchBox'
-import cryoLogo from './assets/snowflake.png'
 import qdLogo_dark from './assets/qd_logo_main_dark.png'
-import qdLogo from './assets/qd_logo_main.png'
-import qdLogo1 from './assets/qd-logo1.png'
-import qdLogo3 from './assets/qd-logo3.png'
-import qdLogoGif1 from './assets/logo_anim_play_once.gif'
+// import qdLogo from './assets/qd_logo_main.png'
+// import qdLogo1 from './assets/qd-logo1.png'
+// import qdLogo3 from './assets/qd-logo3.png'
+// import qdLogoGif1 from './assets/logo_anim_play_once.gif'
 
 
 import CardList from './components/CardList'

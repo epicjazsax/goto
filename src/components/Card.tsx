@@ -4,7 +4,7 @@ const Card = ({ package_name, location, maintainer }: { package_name: string; lo
             <div>
                 <h2>{package_name}</h2>
                 {/* <h4>{location}</h4> */}
-                <p>Maintainer: {maintainer}</p>
+                {maintainer && <p>Maintainer: {maintainer}</p>}
             </div>
         </div>
     );
