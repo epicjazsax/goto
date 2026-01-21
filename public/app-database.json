@@ -2,22 +2,30 @@
     {
         "package_name": "VersaLab",
         "location": "//trantor/software/release/VersaLab/Current Release",
-        "maintainer": "tzakrajsek"
-    },
-    {
-        "package_name": "VersaLab.Firmware",
-        "location": "https://ghostnet/products/versalab/versalabfw/-/releases",
-        "maintainer": "tzakrajsek"
+        "poc": "tzakrajsek",
+        "sub_packages": [
+            {
+                "package_name": "VersaLab.Firmware",
+                "location": "https://ghostnet/products/versalab/versalabfw/-/releases",
+                "poc": "tzakrajsek"
+            },
+            {
+                "package_name": "VersaLab.Installer",
+                "location": "//trantor/software/release/VersaLab/Current Release/VersaLab Software",
+                "filename": "VersaLabSetup.exe",
+                "poc": "tzakrajsek"
+            }
+        ]
     },
     {
         "package_name": "DynaCool",
         "location": "//trantor/software/release/DynaCool/CurrentRelease",
-        "maintainer": "tzakrajsek"
+        "poc": "tzakrajsek"
     },
     {
         "package_name": "OptiCool",
         "location": "//trantor/software/release/OptiCool/CurrentRelease",
-        "maintainer": "dinesh"
+        "poc": "dinesh"
     },
     {
         "package_name": "FusionScope",
@@ -82,5 +90,46 @@
     {
         "package_name": "VacuumGauge",
         "location": "//trantor/software/release/VacuumGauge"
+    },
+
+    {
+        "package_name": "ACDR",
+        "location": "//trantor/software/release/Cross-Platform_Options/ACDR"
+    },
+    {
+        "package_name": "ACMSII",
+        "location": "//trantor/software/release/Cross-Platform_Options/ACMSII"
+    },
+    {
+        "package_name": "Dilution Refrigerator",
+        "location": "//trantor/software/release/Cross-Platform_Options/Dilution Refrigerator"
+    },
+    {
+        "package_name": "ETO",
+        "location": "//trantor/software/release/Cross-Platform_Options/ETO"
+    },
+    {
+        "package_name": "Heat Capacity",
+        "location": "//trantor/software/release/Cross-Platform_Options/Heat Capacity"
+    },
+    {
+        "package_name": "Helium-3",
+        "location": "//trantor/software/release/Cross-Platform_Options/Helium-3"
+    },
+    {
+        "package_name": "LightSource",
+        "location": "//trantor/software/release/Cross-Platform_Options/LightSource"
+    },
+    {
+        "package_name": "OpticalMFP",
+        "location": "//trantor/software/release/Cross-Platform_Options/OpticalMFP"
+    },
+    {
+        "package_name": "TTO",
+        "location": "//trantor/software/release/Cross-Platform_Options/TTO"
+    },
+    {
+        "package_name": "VanDerPauw-Hall",
+        "location": "//trantor/software/release/Cross-Platform_Options/VanDerPauw-Hall/"
     }
 ]

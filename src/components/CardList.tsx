@@ -1,31 +1,25 @@
 import Card from './Card';
+import { ReleasePackage } from './components/ReleasePackage.ts';
 
-interface Entry {
-    package_name: string;
-    location: string;
-    maintainer: string;
-}
+// interface CardListProps {
+//     pkgs: ReleasePackage[];
+// }
 
-interface CardListProps {
-    entries: Entry[];
-}
-
-const createCardFor = (entry: Entry) => {
+const createCardFor = (pkg: ReleasePackage) => {
     return (
         <Card
-            key={entry.package_name}
-            package_name={entry.package_name}
-            location={entry.location}
-            maintainer={entry.maintainer}
+            key={pkg.package_name}
+            pkg={pkg}
         />
     );
 }
 
-const CardList = ({ entries }: CardListProps) => {
+const CardList = ({pkgs}: ReleasePackage[]) => {
     return (
         <>
             {
-                entries.map(entry => createCardFor(entry))
+                // console.log("Rendering CardList with packages:", pkgs),
+                pkgs.map(pkg => createCardFor(pkg))
             }
         </>
     );

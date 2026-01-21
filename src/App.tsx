@@ -1,27 +1,22 @@
 import { useEffect, useState } from 'react'
 import SearchBox from './components/SearchBox'
-import qdLogo_dark from './assets/qd_logo_main_dark.png'
-// import qdLogo from './assets/qd_logo_main.png'
-// import qdLogo1 from './assets/qd-logo1.png'
-// import qdLogo3 from './assets/qd-logo3.png'
-// import qdLogoGif1 from './assets/logo_anim_play_once.gif'
-import {ReleasePackage} from "./components/Packages.ts";
-
+import { ReleasePackage } from "./components/ReleasePackage";
 import CardList from './components/CardList'
 import ErrorBoundary from './components/ErrorBoundary'
-import { filterEntriesByString } from './components/FilteredEntries'
+import { filterPackagesByString } from './components/Filter'
+
+import qdLogo_dark from './assets/qd_logo_main_dark.png'
 import 'tachyons/css/tachyons.min.css'
 import './App.css'
 
 function App() {
     const [searchField, setSearchField] = useState('')
-    const [entries, setEntries] = useState([])
+    const [packages, setPackages] = useState([])
 
     useEffect(() => {
         fetch('/app-database.json')
             .then(res => res.json())
             .then(data => {
-                setEntries(data)
 
                 try {
                     // Read and parse the file
@@ -32,13 +27,13 @@ function App() {
                         throw new Error('JSON content must be an array');
                     }
 
-                    // Map each string to a new instance of the provided class
-                    return data.map((item: unknown) => {
-                        // if (typeof item !== 'string') {
-                        //     throw new Error('All items in the array must be strings');
-                        // }
-                        return new ReleasePackage(item);
-                    });
+                    // Map each entry to a new ReleasePackage instance
+                    setPackages(
+                        data.map((item: unknown) => {
+                            // console.log("pkg:", item);
+                            return new ReleasePackage(item);
+                        })
+                    );
                 } catch (err) {
                     const message = err instanceof Error ? err.message : String(err);
                     throw new Error(`Failed to load or process JSON data": ${message}`);
@@ -50,17 +45,9 @@ function App() {
         setSearchField(event.target.value);
     }
 
+    const filteredPackages = filterPackagesByString(packages, searchField)
 
-    // ReleasePackages =0;
-    //
-    // const jsonString = '{"package_name": "VersaLab", "location": "Trantor", "maintainer": "tzakrajsek"}';
-    // const pkg: ReleasePackage = new ReleasePackage(JSON.parse(jsonString));
-    // console.log(pkg);
-
-
-    const filteredEntries = filterEntriesByString(entries, searchField)
-
-    return !entries.length ?
+    return !packages.length ?
         <div>Loading...</div> :
         (
             <>
@@ -76,7 +63,11 @@ function App() {
                     {/* Search Term is: {searchField} */}
                 </h3>
                 <ErrorBoundary>
-                    <CardList entries={filteredEntries} />
+                    {
+                    //console.log("Filtered Packages:", filteredPackages)
+                    }
+                    <CardList pkgs={filteredPackages} />
+
                 </ErrorBoundary>
             </>
         )
