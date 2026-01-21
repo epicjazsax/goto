@@ -1,20 +1,14 @@
-export function filterEntriesByString(entries: { package_name: string; location: string; poc: string }, searchField: string): object[] {
-    // console.log(`Filtering ${entries.length} entries with search term: ${searchField}`);
-    return entries.filter(entry => {
-        // console.log(`Checking entry: ${JSON.stringify(entry)}`);
-        return (entry.package_name !== undefined && entry.package_name.toLowerCase().includes(searchField.toLowerCase()))
-            || (entry.location !== undefined && entry.location.toLowerCase().includes(searchField.toLowerCase()))
-            || (entry.poc !== undefined && entry.poc.toLowerCase().includes(searchField.toLowerCase()))
-    })
-}
+import { type ReleasePackage } from "./ReleasePackage";
 
-export function filterPackagesByString(entries: ReleasePackage, searchField: string): object[] {
-    // console.log(`Filtering ${entries.length} entries with search term: ${searchField}`);
-    return entries.filter(entry => {
-        // console.log(`Checking entry: ${JSON.stringify(entry)}`);
-        return (entry.package_name !== undefined && entry.package_name.toLowerCase().includes(searchField.toLowerCase()))
-            || (entry.location !== undefined && entry.location.toLowerCase().includes(searchField.toLowerCase()))
-            || (entry.poc !== undefined && entry.poc.toLowerCase().includes(searchField.toLowerCase()))
-    })
+// Type guard function
+const isMatch = (pkg: ReleasePackage, searchField: string): pkg is ReleasePackage => {
+    return (pkg.package_name !== undefined && pkg.package_name.toLowerCase().includes(searchField.toLowerCase()))
+        || (pkg.location !== undefined && pkg.location.toLowerCase().includes(searchField.toLowerCase()))
+        || (pkg.poc !== undefined && pkg.poc.toLowerCase().includes(searchField.toLowerCase()));
+};
+
+export function filterPackagesByString(packages: ReleasePackage[], searchField: string): ReleasePackage[] {
+    // console.log(`Filtering ${packages.length} packages with search term: ${searchField}`);
+    return packages.filter(pkg => isMatch(pkg, searchField))
 }
 

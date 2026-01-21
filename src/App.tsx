@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import SearchBox from './components/SearchBox'
-import { ReleasePackage } from "./components/ReleasePackage";
+import { type ReleasePackage } from "./components/ReleasePackage";
 import CardList from './components/CardList'
 import ErrorBoundary from './components/ErrorBoundary'
 import { filterPackagesByString } from './components/Filter'
@@ -9,9 +9,10 @@ import qdLogo_dark from './assets/qd_logo_main_dark.png'
 import 'tachyons/css/tachyons.min.css'
 import './App.css'
 
+
 function App() {
     const [searchField, setSearchField] = useState('')
-    const [packages, setPackages] = useState([])
+    const [packages, setPackages] = useState<ReleasePackage[]>([])
 
     useEffect(() => {
         fetch('/app-database.json')
@@ -19,9 +20,6 @@ function App() {
             .then(data => {
 
                 try {
-                    // Read and parse the file
-                    // const data = JSON.parse(fileContent);
-
                     // Validate that it's an array of strings
                     if (!Array.isArray(data)) {
                         throw new Error('JSON content must be an array');
@@ -29,9 +27,9 @@ function App() {
 
                     // Map each entry to a new ReleasePackage instance
                     setPackages(
-                        data.map((item: unknown) => {
-                            // console.log("pkg:", item);
-                            return new ReleasePackage(item);
+                        data.map((item: ReleasePackage) => {
+                            // console.log("pkg:", typeof item);
+                            return item;
                         })
                     );
                 } catch (err) {
@@ -64,7 +62,7 @@ function App() {
                 </h3>
                 <ErrorBoundary>
                     {
-                    //console.log("Filtered Packages:", filteredPackages)
+                        //console.log("Filtered Packages:", filteredPackages)
                     }
                     <CardList pkgs={filteredPackages} />
 

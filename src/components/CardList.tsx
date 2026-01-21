@@ -1,26 +1,23 @@
 import Card from './Card';
-import { ReleasePackage } from './components/ReleasePackage.ts';
+import { type ReleasePackage } from './ReleasePackage.ts';
 
-// interface CardListProps {
-//     pkgs: ReleasePackage[];
-// }
-
-const createCardFor = (pkg: ReleasePackage) => {
-    return (
-        <Card
-            key={pkg.package_name}
-            pkg={pkg}
-        />
-    );
+interface CardListProps {
+    pkgs: ReleasePackage[];
 }
 
-const CardList = ({pkgs}: ReleasePackage[]) => {
+const CardList = ({ pkgs }: CardListProps) => {
+    console.log("typeof pkgs:", typeof pkgs);
+
     return (
         <>
             {
                 // console.log("Rendering CardList with packages:", pkgs),
-                pkgs.map(pkg => createCardFor(pkg))
-            }
+                pkgs.map(pkg =>
+                    <Card
+                        key={pkg.package_name}
+                        pkg={pkg}
+                    />
+                )}
         </>
     );
 }
