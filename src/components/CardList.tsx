@@ -6,8 +6,7 @@ interface CardListProps {
 }
 
 const CardList = ({ pkgs }: CardListProps) => {
-    console.log("typeof pkgs:", typeof pkgs);
-
+    // console.log("typeof pkgs:", typeof pkgs);
     return (
         <>
             {
