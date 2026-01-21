@@ -1,0 +1,104 @@
+{
+    "VersaLab": {
+        "location": "//trantor/software/release/VersaLab/Current Release",
+        "poc": "tzakrajsek",
+        "sub_packages": {
+            "VersaLab.Firmware": {
+                "location": "https://ghostnet/products/versalab/versalabfw/-/releases",
+                "poc": "tzakrajsek"
+            },
+            "VersaLab.Installer": {
+                "location": "//trantor/software/release/VersaLab/Current Release/VersaLab Software",
+                "filename": "VersaLabSetup.exe",
+                "poc": "tzakrajsek"
+            }
+        }
+    },
+    "DynaCool": {
+        "location": "//trantor/software/release/DynaCool/CurrentRelease",
+        "poc": "tzakrajsek"
+    },
+    "OptiCool": {
+        "location": "//trantor/software/release/OptiCool/CurrentRelease",
+        "poc": "dinesh"
+    },
+    "FusionScope": {
+        "location": "//trantor/software/release/FusionScope"
+    },
+    "ATL": {
+        "location": "//trantor/software/release/ATL"
+    },
+    "Compressors": {
+        "location": "//trantor/software/release/Compressors"
+    },
+    "Cryocooler_Software": {
+        "location": "//trantor/software/release/Cryocooler_Software"
+    },
+    "DC5000": {
+        "location": "//trantor/software/release/DC5000"
+    },
+    "FinalTest": {
+        "location": "//trantor/software/release/FinalTest"
+    },
+    "He Recovery": {
+        "location": "//trantor/software/release/He Recovery"
+    },
+    "Installations": {
+        "location": "//trantor/software/release/Installations"
+    },
+    "MPMS3": {
+        "location": "//trantor/software/release/MPMS3"
+    },
+    "PPMS_Software": {
+        "location": "//trantor/software/release/PPMS_Software"
+    },
+    "Production": {
+        "location": "//trantor/software/release/Production"
+    },
+    "QdCAN": {
+        "location": "//trantor/software/release/QdCAN"
+    },
+    "TempCals": {
+        "location": "//trantor/software/release/TempCals"
+    },
+    "TestRunner": {
+        "location": "//trantor/software/release/TestRunner"
+    },
+    "Utilities": {
+        "location": "//trantor/software/release/Utilities"
+    },
+    "VacuumGauge": {
+        "location": "//trantor/software/release/VacuumGauge"
+    },
+
+    "ACDR": {
+        "location": "//trantor/software/release/Cross-Platform_Options/ACDR"
+    },
+    "ACMSII": {
+        "location": "//trantor/software/release/Cross-Platform_Options/ACMSII"
+    },
+    "Dilution Refrigerator": {
+        "location": "//trantor/software/release/Cross-Platform_Options/Dilution Refrigerator"
+    },
+    "ETO": {
+        "location": "//trantor/software/release/Cross-Platform_Options/ETO"
+    },
+    "Heat Capacity": {
+        "location": "//trantor/software/release/Cross-Platform_Options/Heat Capacity"
+    },
+    "Helium-3": {
+        "location": "//trantor/software/release/Cross-Platform_Options/Helium-3"
+    },
+    "LightSource": {
+        "location": "//trantor/software/release/Cross-Platform_Options/LightSource"
+    },
+    "OpticalMFP": {
+        "location": "//trantor/software/release/Cross-Platform_Options/OpticalMFP"
+    },
+    "TTO": {
+        "location": "//trantor/software/release/Cross-Platform_Options/TTO"
+    },
+    "VanDerPauw-Hall": {
+        "location": "//trantor/software/release/Cross-Platform_Options/VanDerPauw-Hall/"
+    }
+}
