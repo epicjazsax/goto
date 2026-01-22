@@ -3,6 +3,10 @@
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: left;
+
+  /* my variables */
+  --qd-red: #b71234;
+  --qd-red-xpar: #b7123477;
 }
 
 .logo {
@@ -13,7 +17,8 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 1em #646cffaa);
+  filter: drop-shadow(0 0 2em var(--qd-red-xpar));
+  /* filter: drop-shadow(0 0 1em #646cffaa); */
 }
 
 .logo.react {
@@ -22,7 +27,7 @@
 }
 
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em var(--qd-red-xpar));
 }
 
 .logo-container {
@@ -52,9 +57,31 @@
 }
 */
 
+.card:hover {
+  /* filter: drop-shadow(0 0 1em #19A974); */
+  /* box-shadow: 5px 5px 2px #19A97477; */
+  box-shadow: 5px 5px 2px var(--qd-red-xpar);
+  /* background-color: #f5f5f5; */
+}
 .card {
+  border: 1px solid #888;
+  border-radius: 1em;
   padding: 2em;
   min-width: 450px;
+  /* background-color: #e5e5e5; */
+  /* background-color: #777777; */
+  background-color: #f5f5f5;
+}
+.tag {
+  /* font-family: Cascadia Code, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  margin: 2;
+  padding: 1;
+  /* text-transform: uppercase; */
+  font-size: 0.7rem;
+  /* font-weight: 400; */
+  /* color: #888; */
+  /* color: var(--qd-red); */
 }
 
 .read-the-docs {

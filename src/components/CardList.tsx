@@ -3,9 +3,10 @@ import { type ReleasePackage } from './ReleasePackage.ts';
 
 interface CardListProps {
     pkgs: ReleasePackage[];
+    showJson?: boolean;
 }
 
-const CardList = ({ pkgs }: CardListProps) => {
+const CardList = ({ pkgs, showJson }: CardListProps) => {
     // console.log("typeof pkgs:", typeof pkgs);
     return (
         <>
@@ -15,6 +16,7 @@ const CardList = ({ pkgs }: CardListProps) => {
                     <Card
                         key={pkg.package_name}
                         pkg={pkg}
+                        showJson={showJson}
                     />
                 )}
         </>

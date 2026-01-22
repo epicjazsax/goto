@@ -4,6 +4,7 @@ export interface ReleasePackage {
     package_name: string;
     location: string;
     poc: string;
+    tags: string[];
     sub_packages: ReleasePackage[];
 }
 

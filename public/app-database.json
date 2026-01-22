@@ -3,6 +3,7 @@
         "package_name": "VersaLab",
         "location": "//trantor/software/release/VersaLab/Current Release",
         "poc": "tzakrajsek",
+        "tags": [ "instrument" ],
         "sub_packages": [
             {
                 "package_name": "VersaLab.Firmware",
@@ -20,16 +21,24 @@
     {
         "package_name": "DynaCool",
         "location": "//trantor/software/release/DynaCool/CurrentRelease",
-        "poc": "tzakrajsek"
+        "poc": "tzakrajsek",
+        "tags": [ "instrument" ]
     },
     {
         "package_name": "OptiCool",
         "location": "//trantor/software/release/OptiCool/CurrentRelease",
-        "poc": "dinesh"
+        "poc": "dinesh",
+        "tags": [ "instrument" ]
+    },
+    {
+        "package_name": "MPMS3",
+        "location": "//trantor/software/release/MPMS3",
+        "tags": [ "instrument" ]
     },
     {
         "package_name": "FusionScope",
-        "location": "//trantor/software/release/FusionScope"
+        "location": "//trantor/software/release/FusionScope",
+        "tags": [ "instrument" ]
     },
     {
         "package_name": "ATL",
@@ -60,10 +69,6 @@
         "location": "//trantor/software/release/Installations"
     },
     {
-        "package_name": "MPMS3",
-        "location": "//trantor/software/release/MPMS3"
-    },
-    {
         "package_name": "PPMS_Software",
         "location": "//trantor/software/release/PPMS_Software"
     },
@@ -91,34 +96,40 @@
         "package_name": "VacuumGauge",
         "location": "//trantor/software/release/VacuumGauge"
     },
-
     {
         "package_name": "ACDR",
-        "location": "//trantor/software/release/Cross-Platform_Options/ACDR"
+        "location": "//trantor/software/release/Cross-Platform_Options/ACDR",
+        "tags": [ "option", "shared" ]
     },
     {
         "package_name": "ACMSII",
-        "location": "//trantor/software/release/Cross-Platform_Options/ACMSII"
+        "location": "//trantor/software/release/Cross-Platform_Options/ACMSII",
+        "tags": [ "option", "shared" ]
     },
     {
         "package_name": "Dilution Refrigerator",
-        "location": "//trantor/software/release/Cross-Platform_Options/Dilution Refrigerator"
+        "location": "//trantor/software/release/Cross-Platform_Options/Dilution Refrigerator",
+        "tags": [ "option", "shared" ]
     },
     {
         "package_name": "ETO",
-        "location": "//trantor/software/release/Cross-Platform_Options/ETO"
+        "location": "//trantor/software/release/Cross-Platform_Options/ETO",
+        "tags": [ "option", "shared" ]
     },
     {
         "package_name": "Heat Capacity",
-        "location": "//trantor/software/release/Cross-Platform_Options/Heat Capacity"
+        "location": "//trantor/software/release/Cross-Platform_Options/Heat Capacity",
+        "tags": [ "option", "shared" ]
     },
     {
         "package_name": "Helium-3",
-        "location": "//trantor/software/release/Cross-Platform_Options/Helium-3"
+        "location": "//trantor/software/release/Cross-Platform_Options/Helium-3",
+        "tags": [ "option", "shared" ]
     },
     {
         "package_name": "LightSource",
-        "location": "//trantor/software/release/Cross-Platform_Options/LightSource"
+        "location": "//trantor/software/release/Cross-Platform_Options/LightSource",
+        "tags": [ "option", "shared" ]
     },
     {
         "package_name": "OpticalMFP",

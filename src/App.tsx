@@ -9,10 +9,54 @@ import qdLogo_dark from './assets/qd_logo_main_dark.png'
 import 'tachyons/css/tachyons.min.css'
 import './App.css'
 
+import * as React from 'react';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import ToggleSwitch from './components/ToggleSwitch';
+
+// import { alpha, styled } from '@mui/material/styles';
+// import { green, blue, red } from '@mui/material/colors';
+
+// color: green[600],
+// backgroundColor: alpha(green[600], theme.palette.action.hoverOpacity),
+// backgroundColor: red[600],
+// color: red[600],
+// color: blue[600],
+
+import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+    components: {
+        MuiSwitch: {
+            styleOverrides: {
+                switchBase: {
+                    // Color of the thumb when unchecked
+                    color: 'gray', // e.g., for unchecked thumb
+                },
+                track: {
+                    // Background color of the track when unchecked
+                    backgroundColor: 'gray',
+                    opacity: 0.5,
+                },
+                colorPrimary: {
+                    '&.Mui-checked': {
+                        // Checked state styles (optional)
+                        color: '#336699',
+                    },
+                },
+            },
+        },
+    },
+});
 
 function App() {
     const [searchField, setSearchField] = useState('')
     const [packages, setPackages] = useState<ReleasePackage[]>([])
+    const [checked, setChecked] = React.useState(false);
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setChecked(event.target.checked);
+    };
 
     useEffect(() => {
         fetch('/app-database.json')
@@ -55,17 +99,23 @@ function App() {
                     </a>
 
                     <h1>Release Center</h1>
+                    <span className="mt4">
+                        <FormGroup>
+                            <FormControlLabel control={
+                                <ToggleSwitch
+                                    theme={theme}
+                                    checked={checked}
+                                    onChange={handleChange} />
+                            } label="Show Details" />
+                        </FormGroup>
+                    </span>
+
                 </div>
                 <h3>
                     <SearchBox searchChange={onSearchFieldChange} />
-                    {/* Search Term is: {searchField} */}
                 </h3>
                 <ErrorBoundary>
-                    {
-                        //console.log("Filtered Packages:", filteredPackages)
-                    }
-                    <CardList pkgs={filteredPackages} />
-
+                    <CardList pkgs={filteredPackages} showJson={checked} />
                 </ErrorBoundary>
             </>
         )
