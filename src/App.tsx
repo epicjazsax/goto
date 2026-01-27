@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import SearchBox from './components/SearchBox'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Entry from './components/Card'
 import CardList from './components/CardList'
 import ErrorBoundary from './components/ErrorBoundary'
 import { filterEntriesByString } from './components/FilteredEntries'
@@ -10,7 +11,7 @@ import './App.css'
 
 function App() {
     const [searchField, setSearchField] = useState('')
-    const [entries, setEntries] = useState([])
+    const [entries, setEntries] = useState<Entry[]>([])
 
     useEffect(() => {
         fetch('/goto-database.json')
