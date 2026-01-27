@@ -1,10 +1,21 @@
-import Entry from './Card';
+import Card from './Card';
 
-const CardList = ({ entries }: { entries: Entry[] }) => {
+const createCardFor = (entry: { alias: string; url: string; owner: string }) => {
+    return (
+        <Card
+            key={entry.alias}
+            alias={entry.alias}
+            url={entry.url}
+            owner={entry.owner}
+        />
+    );
+}
+
+const CardList = ({ entries }) => {
     return (
         <>
             {
-                entries.map((entry: Entry) => entry.createCard())
+                entries.map(entry => createCardFor(entry))
             }
         </>
     );
