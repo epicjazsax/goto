@@ -5,12 +5,13 @@ import viteLogo from '/vite.svg'
 import CardList from './components/CardList'
 import ErrorBoundary from './components/ErrorBoundary'
 import { filterEntriesByString } from './components/FilteredEntries'
+import type EntryInterface from './components/EntryInterface'
 import 'tachyons/css/tachyons.min.css'
 import './App.css'
 
 function App() {
     const [searchField, setSearchField] = useState('')
-    const [entries, setEntries] = useState([])
+    const [entries, setEntries] = useState<EntryInterface[]>([])
 
     useEffect(() => {
         fetch('/goto-database.json')

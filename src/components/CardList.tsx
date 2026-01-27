@@ -1,6 +1,7 @@
 import Card from './Card';
+import type EntryInterface from './EntryInterface';
 
-const createCardFor = (entry: { alias: string; url: string; owner: string }) => {
+const createCardFor = (entry: EntryInterface) => {
     return (
         <Card
             key={entry.alias}
@@ -11,7 +12,7 @@ const createCardFor = (entry: { alias: string; url: string; owner: string }) => 
     );
 }
 
-const CardList = ({ entries }) => {
+const CardList = ({ entries }: { entries: EntryInterface[] }) => {
     return (
         <>
             {

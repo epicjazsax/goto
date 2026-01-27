@@ -1,4 +1,6 @@
-const Card = ({ alias, url, owner }: { alias: string; url: string; owner: string }) => {
+import type EntryInterface from "./EntryInterface";
+
+const Card = ({ alias, url, owner }: EntryInterface) => {
     return (
         <div className='bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 black' data-testid='card'>
             <div>
