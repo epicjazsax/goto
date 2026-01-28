@@ -6,7 +6,6 @@ import CardList from './components/CardList'
 import ErrorBoundary from './components/ErrorBoundary'
 import { filterEntriesByString } from './components/FilteredEntries'
 import type EntryInterface from './components/EntryInterface'
-import 'tachyons/css/tachyons.min.css'
 import './App.css'
 
 function App() {
@@ -31,7 +30,7 @@ function App() {
         <div>Loading...</div> :
         (
             <>
-                <div>
+                <div className='bg-blue-800 border border-white inline-flex'>
                     <a href="https://vite.dev" target="_blank">
                         <img src={viteLogo} className="logo" alt="Vite logo" />
                     </a>
@@ -39,13 +38,19 @@ function App() {
                         <img src={reactLogo} className="logo react" alt="React logo" />
                     </a>
                 </div>
-                <h1>Go-To Manager</h1>
-                <h3>
+                <h1 className='bg-yellow-800 border border-white my-4 py-4'>
+                    Go-To Manager
+                </h1>
+                <h3 className='border border-white m-3 p-3'>
                     <SearchBox searchChange={onSearchFieldChange} />
-                    Search Term is: {searchField}
+                    <div className='bg-red-800 border border-white m-1 p-1'>
+                        Search Term is: {searchField}
+                    </div>
                 </h3>
                 <ErrorBoundary>
-                    <CardList entries={filteredEntries} />
+                    <div className='border border-white m-3 p-3'>
+                        <CardList entries={filteredEntries} />
+                    </div>
                 </ErrorBoundary>
             </>
         )
