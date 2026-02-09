@@ -1,11 +1,8 @@
-// components/theme-switch.tsx
 "use client"
 
 import { useTheme } from "next-themes"
-// import { Switch } from "@/components/ui/switch"
 import { useEffect, useState } from "react"
-// import { FiSun, FiMoon, FiYoutube, FiGithub } from 'react-icons/fi'
-import { RiSunLine, RiMoonLine, RiSunFill, RiMoonFill } from '@remixicon/react'
+import { RiSunLine, RiMoonLine } from '@remixicon/react'
 
 import {
     Tooltip,
