@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo_Dark from "@/assets/logo_main_dark.png";
 import Logo from "@/assets/logo_main.png";
-import { ThemeProvider } from "@/components/theme-provider"
-import { ThemeSwitch } from "@/components/theme-switch"
+import { ThemeProvider } from "@/components/ThemeProvider"
+import { ThemeSwitch } from "@/components/ThemeSwitch"
 
 const geistSans = Geist({
     variable: "--font-geist-sans",

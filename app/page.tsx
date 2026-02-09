@@ -2,9 +2,9 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import ErrorBoundary from '@components/error-boundary'
-import SearchBox from '@components/search-box'
-import CardList from '@components/card-list'
+import ErrorBoundary from '@components/ErrorBoundary'
+import SearchBox from '@components/SearchBox'
+import CardList from '@components/CardList'
 import { filterPackagesByString } from '@utils/filter'
 import { type ReleasePackage } from '@utils/release-package';
 

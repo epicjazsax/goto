@@ -1,4 +1,4 @@
-import Card from '@components/card';
+import Card from '@components/Card';
 import { type ReleasePackage } from '@utils/release-package';
 
 interface CardListProps {
