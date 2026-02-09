@@ -1,53 +1,12 @@
-[
-    {
-        "alias": "github",
+{
+    "github": {
+        "package_name": "github",
         "url": "github.com",
         "owner": "jzakrajsek"
     },
-    {
-        "alias": "mdn",
+    "mdn": {
+        "package_name": "mdn",
         "url": "developer.mozilla.org",
         "owner": "jzakrajsek"
-    },
-    {
-        "alias": "wikipedia",
-        "url": "wikipedia.org",
-        "owner": "jzakrajsek"
-    },
-    {
-        "alias": "critrole",
-        "url": "critrole.com",
-        "owner": "jzakrajsek"
-    },
-    {
-        "alias": "wf",
-        "url": "warframe.com",
-        "owner": "jzakrajsek"
-    },
-    {
-        "alias": "google",
-        "url": "google.com",
-        "owner": "tzakrajsek"
-    },
-    {
-        "alias": "youtube",
-        "url": "youtube.com",
-        "owner": "tzakrajsek"
-    },
-    {
-        "alias": "steam",
-        "url": "store.steampowered.com",
-        "owner": "tzakrajsek"
-    },
-    {
-        "alias": "nvim",
-        "url": "neovim.io",
-        "owner": "tzakrajsek"
-    },
-    {
-        "alias": "so",
-        "url": "stackoverflow.com",
-        "owner": "tzakrajsek"
     }
-]
-
+}
