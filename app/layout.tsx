@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Release Center",
-    description: "Quantum Design software/firmware release server",
+    title: "Go-To",
+    description: "View and manage a database of internet shortcuts",
 };
 
 export default function RootLayout({

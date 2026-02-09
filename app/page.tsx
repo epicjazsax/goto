@@ -55,9 +55,6 @@ export default function Home() {
         <>
             <main className="flex flex-col py-16 px-16 font-sans">
                 <div className="flex flex-row">
-                    <div className="flex items-center justify-center text-center text-lg text-gray-500">
-                        <Link href="/files" className="dark:text-teal-600 text-red text-xl flex border border-gray-600 rounded-lg p-2">Search All Files</Link>
-                    </div>
                     <div className="flex-1"></div>
                     <SearchBox searchChange={onSearchFieldChange} />
                 </div>
