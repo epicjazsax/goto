@@ -63,11 +63,6 @@ export default function Home() {
                         <CardList pkgs={filteredPackages} showJson={showCardData} />
                     </ErrorBoundary>
                 </div>
-                {/*
-        <div className="mt-8 flex items-center justify-center text-center text-lg text-gray-500 ">
-          <Link href="/files" className="dark:text-teal-600 text-red text-xl flex border border-gray-600 rounded-lg p-4">Search All Files</Link>
-        </div>
-        */}
             </main>
         </>
     );

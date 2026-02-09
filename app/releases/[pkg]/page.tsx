@@ -2,7 +2,6 @@ import Link from "next/link";
 import { readFile } from 'fs/promises';
 import path from 'path';
 import { type ReleasePackage } from '@utils/release-package';
-import { JsonViewer } from '@/components/json-view'
 import { findFile } from '@utils/findfile';
 
 export default async function Package({
@@ -84,29 +83,12 @@ export default async function Package({
                     }
 
                     {releasePackage.olivaw_files && releasePackage.olivaw_files.length > 0 ||
-                        releasePackage.gitlab_files && releasePackage.gitlab_files.length > 0 ||
                         <div className="flex flex-col mt-16">
-                            <div>No package description created yet</div><div>You should probaby proceed to...</div>
-                            <div className="mt-16 flex items-center justify-center text-center text-lg text-gray-500">
-                                <Link href="/files" className="dark:text-teal-600 text-red text-xl flex border border-gray-600 rounded-lg p-2">Search All Files</Link>
-                            </div>
+                            <div>No package description created yet</div>
                         </div>
                     }
 
                 </div>
-
-
-                {/*
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <ul className="list-square list-inside">
-            {releasePackage.olivaw_base && (<li>path: {releasePackage.olivaw_base}</li>)}
-            <li>poc: {releasePackage.poc || "TBD"}</li>
-          </ul>
-        </div>
-        */}
-
-                {/* <JsonViewer data={releasePackage} /> */}
-
             </div>
         </div>
     );
