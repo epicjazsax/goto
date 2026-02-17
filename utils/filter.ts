@@ -1,12 +1,12 @@
 import { type EntryInterface } from "@utils/EntryInterface";
 
-const isMatch = (pkg: EntryInterface, searchField: string): pkg is EntryInterface => {
+const isMatch = (entry: EntryInterface, searchField: string): entry is EntryInterface => {
     const searchLower = searchField.toLowerCase();
     return (
-        (pkg.alias?.toLowerCase().includes(searchLower))
-        || (pkg.url?.toLowerCase().includes(searchLower))
-        || (pkg.owner?.toLowerCase().includes(searchLower))
-        || (pkg.tags?.some(s => s.toLowerCase().includes(searchLower)) ?? false)
+        (entry.alias?.toLowerCase().includes(searchLower))
+        || (entry.url?.toLowerCase().includes(searchLower))
+        || (entry.owner?.toLowerCase().includes(searchLower))
+        || (entry.tags?.some(s => s.toLowerCase().includes(searchLower)) ?? false)
     );
 };
 
@@ -18,14 +18,14 @@ export function filterPackagesByString(packages: Record<string, EntryInterface>,
     }
 
     // Filter the dictionary and return a new dictionary with matching packages
-    return Object.entries(packages).reduce((filtered, [key, pkg]) => {
+    return Object.entries(packages).reduce((filtered, [key, entry]) => {
         if (filterIsExclude) {
-            if (!isMatch(pkg, searchField)) {
-                filtered[key] = pkg;
+            if (!isMatch(entry, searchField)) {
+                filtered[key] = entry;
             }
         } else {
-            if (isMatch(pkg, searchField)) {
-                filtered[key] = pkg;
+            if (isMatch(entry, searchField)) {
+                filtered[key] = entry;
             }
         }
         return filtered;
@@ -42,9 +42,9 @@ export function filterPackagesByString(packages: Record<string, EntryInterface>,
 //   }
 
 //   // Filter the dictionary and return a new dictionary with matching packages
-//   return Object.entries(packages).reduce((filtered, [key, pkg]) => {
-//     if (isMatch(pkg, searchField)) {
-//       filtered[key] = pkg;
+//   return Object.entries(packages).reduce((filtered, [key, entry]) => {
+//     if (isMatch(entry, searchField)) {
+//       filtered[key] = entry;
 //     }
 //     return filtered;
 //   }, {} as Record<string, EntryInterface>);

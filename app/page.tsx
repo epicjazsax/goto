@@ -50,7 +50,7 @@ export default function Home() {
                 </div>
                 <div className="flex mx-auto max-w-2/3 items-center">
                     <ErrorBoundary>
-                        <CardList pkgs={filteredEntries} showJson={showCardData} />
+                        <CardList entries={filteredEntries} showJson={showCardData} />
                     </ErrorBoundary>
                 </div>
             </main>

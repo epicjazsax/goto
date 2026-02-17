@@ -6,31 +6,31 @@ import { type EntryInterface } from '@utils/EntryInterface';
 export default async function Package({
     params,
 }: {
-    params: Promise<{ pkg: string }>
+    params: Promise<{ entry: string }>
 }) {
-    const { pkg } = await params;
-    console.log('pkg:', pkg);
+    const { entry } = await params;
+    console.log('entry:', entry);
 
-    let cleanPkg = pkg.replace("%20", " ");
+    let cleanEntry = entry.replace("%20", " ");
     // Read and parse the JSON file
     const filePath = path.join(process.cwd(), 'public/app-database.json');
     const fileContents = await readFile(filePath, 'utf8');
     const packages: Record<string, EntryInterface> = JSON.parse(fileContents);
 
     // Find the matching package - first try exact match, then case-insensitive
-    let releasePackage: EntryInterface | undefined = packages[cleanPkg];
+    let releasePackage: EntryInterface | undefined = packages[cleanEntry];
 
     if (!releasePackage) {
         // Try case-insensitive search
-        const pkgLower = cleanPkg.toLowerCase();
-        const matchingKey = Object.keys(packages).find(key => key.toLowerCase() === pkgLower);
+        const entryLower = cleanEntry.toLowerCase();
+        const matchingKey = Object.keys(packages).find(key => key.toLowerCase() === entryLower);
         releasePackage = matchingKey ? packages[matchingKey] : undefined;
     }
 
     if (!releasePackage) {
         return (
             <div className="flex min-h-screen items-center justify-center">
-                <p>Package "{cleanPkg}" not found</p>
+                <p>Package "{cleanEntry}" not found</p>
             </div>
         );
     }
