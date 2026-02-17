@@ -2,7 +2,6 @@ import Link from "next/link";
 import { readFile } from 'fs/promises';
 import path from 'path';
 import { type EntryInterface } from '@utils/EntryInterface';
-import { findFile } from '@utils/findfile';
 
 export default async function Package({
     params,
@@ -52,21 +51,6 @@ export default async function Package({
 
                 <div className="flex items-center gap-6 text-center sm:items-start sm:text-left">
 
-                    {releasePackage.olivaw_files && releasePackage.olivaw_files.length > 0 &&
-                        <div className='flex-col rounded-lg p-6 mt-4 border border-gray-600'>
-                            <h2 className="text-xl font-semibold mb-4">Released Files (olivaw)</h2>
-                            {releasePackage.olivaw_files.map((file) => (
-
-                                <Link key={file} href={`/api/download/${findFile(file, releasePackage)}`}>
-                                    <div className="border border-teal-600 m-2 p-2 rounded-xl text-xs text-center">
-                                        {path.basename(file)}
-                                    </div>
-                                </Link>
-
-                            ))}
-                        </div>
-                    }
-
                     {releasePackage.gitlab_files && releasePackage.gitlab_files.length > 0 &&
                         <div className='flex-col rounded-lg p-6 mt-4 border border-gray-600'>
                             <h2 className="text-xl font-semibold mb-4">Released Files (gitlab)</h2>
@@ -82,7 +66,7 @@ export default async function Package({
                         </div>
                     }
 
-                    {releasePackage.olivaw_files && releasePackage.olivaw_files.length > 0 ||
+                    {releasePackage.gitlab_files && releasePackage.gitlab_files.length > 0 ||
                         <div className="flex flex-col mt-16">
                             <div>No package description created yet</div>
                         </div>

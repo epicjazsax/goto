@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link'
+//import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import ErrorBoundary from '@components/ErrorBoundary'
 import SearchBox from '@components/SearchBox'
@@ -11,8 +11,7 @@ import { type EntryInterface } from '@utils/EntryInterface';
 export default function Home() {
 
     const [searchField, setSearchField] = useState<string>('')
-    // const [excludeField, setExcludeField] = useState<string>('')
-    const [packages, setPackages] = useState<Record<string, EntryInterface>>({})
+    const [entries, setEntries] = useState<Record<string, EntryInterface>>({})
     const showCardData = false;
 
     useEffect(() => {
@@ -26,8 +25,8 @@ export default function Home() {
                         throw new Error('JSON content must be an object/dictionary');
                     }
 
-                    // Set the packages dictionary directly
-                    setPackages(data);
+                    // Set the entries dictionary directly
+                    setEntries(data);
                 } catch (err) {
                     const message = err instanceof Error ? err.message : String(err);
                     throw new Error(`Failed to load or process JSON data": ${message}`);
@@ -39,17 +38,8 @@ export default function Home() {
         setSearchField(event.target.value);
     }
 
-    // const onExcludeFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    //   setExcludeField(event.target.value);
-    // }
-
-    // const filteredPackages = filterPackagesByString(
-    //   filterPackagesByString(packages, searchField),
-    //   excludeField,
-    //   true)
-
-    const filteredPackages =
-        filterPackagesByString(packages, searchField)
+    const filteredEntries =
+        filterPackagesByString(entries, searchField)
 
     return (
         <>
@@ -60,7 +50,7 @@ export default function Home() {
                 </div>
                 <div className="flex mx-auto max-w-2/3 items-center">
                     <ErrorBoundary>
-                        <CardList pkgs={filteredPackages} showJson={showCardData} />
+                        <CardList pkgs={filteredEntries} showJson={showCardData} />
                     </ErrorBoundary>
                 </div>
             </main>

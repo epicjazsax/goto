@@ -19,7 +19,7 @@ const Card = ({ pkg, showJson }: CardProps) => {
     const { theme, resolvedTheme } = useTheme()
     // resolvedTheme accounts for "system" theme
     const currentTheme = resolvedTheme || theme
-    const shouldShow = pkg.olivaw_files && pkg.olivaw_files.length > 0 ||
+    const shouldShow = pkg.alias && pkg.alias.length > 0 ||
         pkg.gitlab_files && pkg.gitlab_files.length > 0;
 
     if (!shouldShow) {

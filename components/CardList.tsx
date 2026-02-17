@@ -17,16 +17,6 @@ const CardList = ({ pkgs, showJson }: CardListProps) => {
         }
 
         return a.alias.localeCompare(b.alias);
-
-        // const aFileCount = a.olivaw_files?.length ?? 0;
-        // const bFileCount = b.olivaw_files?.length ?? 0;
-
-        // if (aFileCount !== bFileCount) {
-        //   // Larger length comes first
-        //   return bFileCount - aFileCount;
-        // }
-
-        // return 0; // They are equal
     });
 
     return (

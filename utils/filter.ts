@@ -4,11 +4,8 @@ const isMatch = (pkg: EntryInterface, searchField: string): pkg is EntryInterfac
     const searchLower = searchField.toLowerCase();
     return (
         (pkg.alias?.toLowerCase().includes(searchLower))
-        || (pkg.olivaw_base?.toLowerCase().includes(searchLower))
         || (pkg.poc?.toLowerCase().includes(searchLower))
         || (pkg.tags?.some(s => s.toLowerCase().includes(searchLower)) ?? false)
-        || (pkg.olivaw_files?.some(s => s.toLowerCase().includes(searchLower)) ?? false)
-        // || (pkg.files_ignored?.some(s => s.toLowerCase().includes(searchLower)) ?? false)
     );
 };
 
