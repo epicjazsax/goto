@@ -4,7 +4,6 @@ const isMatch = (pkg: EntryInterface, searchField: string): pkg is EntryInterfac
     const searchLower = searchField.toLowerCase();
     return (
         (pkg.alias?.toLowerCase().includes(searchLower))
-        || (pkg.poc?.toLowerCase().includes(searchLower))
         || (pkg.tags?.some(s => s.toLowerCase().includes(searchLower)) ?? false)
     );
 };

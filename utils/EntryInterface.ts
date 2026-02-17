@@ -2,8 +2,8 @@
 
 export interface EntryInterface {
     alias: string;
-    poc?: string;
+    url: string;
+    owner?: string;
     tags?: string[];
-    files_ignored?: string[];
 }
 

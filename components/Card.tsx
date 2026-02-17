@@ -35,10 +35,6 @@ const Card = ({ pkg, showJson }: CardProps) => {
         <div className='flex flex-col min-w-40 p-2 m-1 border-2 border-gray-400 rounded-xl' data-testid='card'>
             <div>
                 <h2 className='inline-block text-red dark:text-teal-600 font-bold text-center'><Link href={`/releases/${pkg.alias}`}>{pkg.alias}</Link></h2>
-                {/* {pkg.path.includes("Cross-Platform_Options") &&
-          <span className='text-gray-600'>[Cross-Platform]</span> || <br />} */}
-                {/* {pkg.poc && <p>poc: {pkg.poc}</p>} */}
-                {/* <pre>{stringify(pkg)}</pre> */}
 
                 {pkg.tags && pkg.tags.length > 0 &&
                     <div className=''>

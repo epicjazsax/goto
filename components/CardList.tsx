@@ -8,14 +8,6 @@ interface CardListProps {
 
 const CardList = ({ pkgs, showJson }: CardListProps) => {
     const sortedPackages = Object.values(pkgs).sort((a, b) => {
-        const aIsInstrument = a.tags?.includes("instrument") ?? false;
-        const bIsInstrument = b.tags?.includes("instrument") ?? false;
-
-        if (aIsInstrument !== bIsInstrument) {
-            // If a is an instrument and b isn't, a comes first (-1)
-            return aIsInstrument ? -1 : 1;
-        }
-
         return a.alias.localeCompare(b.alias);
     });
 
