@@ -1,4 +1,4 @@
-import { type ReleasePackage } from '@utils/release-package';
+import { type EntryInterface } from '@utils/EntryInterface';
 // import stringify from "json-stringify-pretty-compact";
 import JsonView from '@uiw/react-json-view';
 import { nordTheme as jsonThemeDark } from '@uiw/react-json-view/nord';
@@ -11,7 +11,7 @@ import { useTheme } from "next-themes"
 import Link from 'next/link';
 
 interface CardProps {
-    pkg: ReleasePackage;
+    pkg: EntryInterface;
     showJson?: boolean;
 }
 
@@ -27,7 +27,7 @@ const Card = ({ pkg, showJson }: CardProps) => {
         return (
             <div className='flex flex-col p-2 m-1 border-2 border-gray-400 rounded-xl' data-testid='card'>
                 <div>
-                    <h2 className='inline-block text-gray-400 dark:text-gray-600 text-center'><Link href={`/releases/${pkg.package_name}`}>{pkg.package_name}</Link></h2>
+                    <h2 className='inline-block text-gray-400 dark:text-gray-600 text-center'><Link href={`/releases/${pkg.alias}`}>{pkg.alias}</Link></h2>
                 </div>
             </div >
         );
@@ -35,7 +35,7 @@ const Card = ({ pkg, showJson }: CardProps) => {
     return (
         <div className='flex flex-col min-w-40 p-2 m-1 border-2 border-gray-400 rounded-xl' data-testid='card'>
             <div>
-                <h2 className='inline-block text-red dark:text-teal-600 font-bold text-center'><Link href={`/releases/${pkg.package_name}`}>{pkg.package_name}</Link></h2>
+                <h2 className='inline-block text-red dark:text-teal-600 font-bold text-center'><Link href={`/releases/${pkg.alias}`}>{pkg.alias}</Link></h2>
                 {/* {pkg.path.includes("Cross-Platform_Options") &&
           <span className='text-gray-600'>[Cross-Platform]</span> || <br />} */}
                 {/* {pkg.poc && <p>poc: {pkg.poc}</p>} */}

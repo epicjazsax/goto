@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { readFile } from 'fs/promises';
 import path from 'path';
-import { type ReleasePackage } from '@utils/release-package';
+import { type EntryInterface } from '@utils/EntryInterface';
 import { findFile } from '@utils/findfile';
 
 export default async function Package({
@@ -16,10 +16,10 @@ export default async function Package({
     // Read and parse the JSON file
     const filePath = path.join(process.cwd(), 'public/app-database.json');
     const fileContents = await readFile(filePath, 'utf8');
-    const packages: Record<string, ReleasePackage> = JSON.parse(fileContents);
+    const packages: Record<string, EntryInterface> = JSON.parse(fileContents);
 
     // Find the matching package - first try exact match, then case-insensitive
-    let releasePackage: ReleasePackage | undefined = packages[cleanPkg];
+    let releasePackage: EntryInterface | undefined = packages[cleanPkg];
 
     if (!releasePackage) {
         // Try case-insensitive search
@@ -40,7 +40,7 @@ export default async function Package({
         <div className="flex items-center justify-center font-sans">
             <div className="flex max-w-3xl flex-col items-center justify-center py-16 px-16 sm:items-start">
                 <h1 className="max-w-xs text-3xl font-semibold">
-                    {releasePackage.package_name}
+                    {releasePackage.alias}
                 </h1>
                 {releasePackage.tags && releasePackage.tags.length > 0 &&
                     <div className=''>

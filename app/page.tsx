@@ -6,13 +6,13 @@ import ErrorBoundary from '@components/ErrorBoundary'
 import SearchBox from '@components/SearchBox'
 import CardList from '@components/CardList'
 import { filterPackagesByString } from '@utils/filter'
-import { type ReleasePackage } from '@utils/release-package';
+import { type EntryInterface } from '@utils/EntryInterface';
 
 export default function Home() {
 
     const [searchField, setSearchField] = useState<string>('')
     // const [excludeField, setExcludeField] = useState<string>('')
-    const [packages, setPackages] = useState<Record<string, ReleasePackage>>({})
+    const [packages, setPackages] = useState<Record<string, EntryInterface>>({})
     const showCardData = false;
 
     useEffect(() => {

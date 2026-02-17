@@ -1,8 +1,8 @@
 import Card from '@components/Card';
-import { type ReleasePackage } from '@utils/release-package';
+import { type EntryInterface } from '@utils/EntryInterface';
 
 interface CardListProps {
-    pkgs: Record<string, ReleasePackage>;
+    pkgs: Record<string, EntryInterface>;
     showJson?: boolean;
 }
 
@@ -16,7 +16,7 @@ const CardList = ({ pkgs, showJson }: CardListProps) => {
             return aIsInstrument ? -1 : 1;
         }
 
-        return a.package_name.localeCompare(b.package_name);
+        return a.alias.localeCompare(b.alias);
 
         // const aFileCount = a.olivaw_files?.length ?? 0;
         // const bFileCount = b.olivaw_files?.length ?? 0;
@@ -33,7 +33,7 @@ const CardList = ({ pkgs, showJson }: CardListProps) => {
         <div className="flex flex-wrap justify-center gap-4 w-full py-16 px-4 sm:px-8 md:px-16 lg:px-16">
             {sortedPackages.map((pkg) => (
                 <Card
-                    key={pkg.package_name}
+                    key={pkg.alias}
                     pkg={pkg}
                     showJson={showJson}
                 />

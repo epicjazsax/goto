@@ -1,4 +1,4 @@
-import { type ReleasePackage } from "@utils/release-package";
+import { type EntryInterface } from "@utils/EntryInterface";
 import path from 'path';
 
 // Type guard function
@@ -8,7 +8,7 @@ import path from 'path';
 //     || (pkg.poc !== undefined && pkg.poc.toLowerCase().includes(searchField.toLowerCase()));
 // };
 
-export function findFile(filename: string, pkg: ReleasePackage): string {
+export function findFile(filename: string, pkg: EntryInterface): string {
     console.log('Finding file:', filename, 'in package:', pkg);
     if (pkg.olivaw_files && pkg.olivaw_files.includes(filename)) {
         // "olivaw_base": "VersaLab/Current Release",
@@ -16,7 +16,7 @@ export function findFile(filename: string, pkg: ReleasePackage): string {
         const filePath = path.join(pkg.olivaw_base, filename);
         return filePath;
     }
-    console.log('File not found in package:', pkg.package_name);
+    console.log('File not found in package:', pkg.alias);
     return pkg.olivaw_base;
 }
 

@@ -1,11 +1,11 @@
 {
     "github": {
-        "package_name": "github",
+        "alias": "github",
         "url": "github.com",
         "owner": "jzakrajsek"
     },
     "mdn": {
-        "package_name": "mdn",
+        "alias": "mdn",
         "url": "developer.mozilla.org",
         "owner": "jzakrajsek"
     }

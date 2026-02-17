@@ -1,9 +1,9 @@
-import { type ReleasePackage } from "@utils/release-package";
+import { type EntryInterface } from "@utils/EntryInterface";
 
-const isMatch = (pkg: ReleasePackage, searchField: string): pkg is ReleasePackage => {
+const isMatch = (pkg: EntryInterface, searchField: string): pkg is EntryInterface => {
     const searchLower = searchField.toLowerCase();
     return (
-        (pkg.package_name?.toLowerCase().includes(searchLower))
+        (pkg.alias?.toLowerCase().includes(searchLower))
         || (pkg.olivaw_base?.toLowerCase().includes(searchLower))
         || (pkg.poc?.toLowerCase().includes(searchLower))
         || (pkg.tags?.some(s => s.toLowerCase().includes(searchLower)) ?? false)
@@ -12,7 +12,7 @@ const isMatch = (pkg: ReleasePackage, searchField: string): pkg is ReleasePackag
     );
 };
 
-export function filterPackagesByString(packages: Record<string, ReleasePackage>, searchField: string, filterIsExclude?: boolean): Record<string, ReleasePackage> {
+export function filterPackagesByString(packages: Record<string, EntryInterface>, searchField: string, filterIsExclude?: boolean): Record<string, EntryInterface> {
     // console.log(`Filtering ${Object.keys(packages).length} packages with search term: ${searchField}`);
 
     // If search field is empty, return all packages
@@ -32,7 +32,7 @@ export function filterPackagesByString(packages: Record<string, ReleasePackage>,
             }
         }
         return filtered;
-    }, {} as Record<string, ReleasePackage>);
+    }, {} as Record<string, EntryInterface>);
 }
 
 
@@ -50,6 +50,6 @@ export function filterPackagesByString(packages: Record<string, ReleasePackage>,
 //       filtered[key] = pkg;
 //     }
 //     return filtered;
-//   }, {} as Record<string, ReleasePackage>);
+//   }, {} as Record<string, EntryInterface>);
 // }
 
