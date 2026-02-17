@@ -4,12 +4,13 @@ const isMatch = (pkg: EntryInterface, searchField: string): pkg is EntryInterfac
     const searchLower = searchField.toLowerCase();
     return (
         (pkg.alias?.toLowerCase().includes(searchLower))
+        || (pkg.url?.toLowerCase().includes(searchLower))
+        || (pkg.owner?.toLowerCase().includes(searchLower))
         || (pkg.tags?.some(s => s.toLowerCase().includes(searchLower)) ?? false)
     );
 };
 
 export function filterPackagesByString(packages: Record<string, EntryInterface>, searchField: string, filterIsExclude?: boolean): Record<string, EntryInterface> {
-    // console.log(`Filtering ${Object.keys(packages).length} packages with search term: ${searchField}`);
 
     // If search field is empty, return all packages
     if (!searchField.trim()) {

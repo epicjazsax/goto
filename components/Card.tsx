@@ -19,23 +19,13 @@ const Card = ({ pkg, showJson }: CardProps) => {
     const { theme, resolvedTheme } = useTheme()
     // resolvedTheme accounts for "system" theme
     const currentTheme = resolvedTheme || theme
-    const shouldShow = pkg.alias && pkg.alias.length > 0
 
-    if (!shouldShow) {
-        // return null;
-        return (
-            <div className='flex flex-col p-2 m-1 border-2 border-gray-400 rounded-xl' data-testid='card'>
-                <div>
-                    <h2 className='inline-block text-gray-400 dark:text-gray-600 text-center'><Link href={`/releases/${pkg.alias}`}>{pkg.alias}</Link></h2>
-                </div>
-            </div >
-        );
-    }
     return (
         <div className='flex flex-col min-w-40 p-2 m-1 border-2 border-gray-400 rounded-xl' data-testid='card'>
-            <div>
-                <h2 className='inline-block text-red dark:text-teal-600 font-bold text-center'><Link href={`/releases/${pkg.alias}`}>{pkg.alias}</Link></h2>
-
+            <Link href={`/releases/${pkg.alias}`}>
+                <h1 className='text-red dark:text-teal-600 font-bold text-center'>{pkg.alias}</h1>
+                <h2 className='text-red dark:text-teal-600 font-bold text-center'>{pkg.url}</h2>
+                <h3 className='text-red dark:text-teal-600 font-bold text-center'>{pkg.owner}</h3>
                 {pkg.tags && pkg.tags.length > 0 &&
                     <div className=''>
                         {/* <h4 className='di'>Tags:</h4><span className='pa2' /> */}
@@ -49,7 +39,7 @@ const Card = ({ pkg, showJson }: CardProps) => {
                         <JsonView value={pkg} style={currentTheme === "dark" ? jsonThemeDark : jsonTheme} displayDataTypes={false} collapsed={1} enableClipboard={false} />
                     </div>
                 }
-            </div>
+            </Link>
         </div >
     );
 }
