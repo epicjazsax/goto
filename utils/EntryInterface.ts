@@ -4,8 +4,6 @@ export interface EntryInterface {
     alias: string;
     poc?: string;
     tags?: string[];
-    sub_packages?: EntryInterface[];
-    gitlab_files?: string[];
     files_ignored?: string[];
 }
 

@@ -51,22 +51,18 @@ export default async function Package({
 
                 <div className="flex items-center gap-6 text-center sm:items-start sm:text-left">
 
-                    {releasePackage.gitlab_files && releasePackage.gitlab_files.length > 0 &&
+                    {releasePackage.alias && releasePackage.alias.length > 0 &&
                         <div className='flex-col rounded-lg p-6 mt-4 border border-gray-600'>
-                            <h2 className="text-xl font-semibold mb-4">Released Files (gitlab)</h2>
-                            {releasePackage.gitlab_files.map((file) => (
-
-                                <Link key={file} href={file}>
-                                    <div className="border border-teal-600 m-2 p-2 rounded-xl text-xs text-center">
-                                        {path.basename(file)}
-                                    </div>
-                                </Link>
-
-                            ))}
+                            <h2 className="text-xl font-semibold mb-4">Entry Information</h2>
+                            <Link key={releasePackage.alias} href={releasePackage.alias}>
+                                <div className="border border-teal-600 m-2 p-2 rounded-xl text-xs text-center">
+                                    {path.basename(releasePackage.alias)}
+                                </div>
+                            </Link>
                         </div>
                     }
 
-                    {releasePackage.gitlab_files && releasePackage.gitlab_files.length > 0 ||
+                    {releasePackage.alias && releasePackage.alias.length > 0 ||
                         <div className="flex flex-col mt-16">
                             <div>No package description created yet</div>
                         </div>
