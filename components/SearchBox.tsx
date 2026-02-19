@@ -4,17 +4,13 @@ import { useEffect, useRef } from 'react';
 
 interface SearchBoxProps {
     searchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    label_override?: string;
-    activation_key_override?: string;
-    placeholder_override?: string;
 }
 
-const SearchBox: React.FunctionComponent<SearchBoxProps> = ({ searchChange, label_override, activation_key_override, placeholder_override }) => {
+const SearchBox: React.FunctionComponent<SearchBoxProps> = ({ searchChange }) => {
 
     const inputRef = useRef<HTMLInputElement>(null);
-    const label = label_override ? label_override : 'Package Search';
-    const activation_key = activation_key_override ? activation_key_override : '/';
-    const placeholder = placeholder_override ? placeholder_override : 'Press / to search...';
+    const activation_key = '/';
+    const placeholder = 'Press / to search...';
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -45,10 +41,8 @@ const SearchBox: React.FunctionComponent<SearchBoxProps> = ({ searchChange, labe
 
     return (
         <div className='p-2'>
-            <label htmlFor="search" className="mr-2">{label}:</label>
             <input
                 ref={inputRef}
-                // id="search"
                 className='ml-1 p-2 border-2 dark:border-teal-600 border-gray-400 rounded focus:outline-none focus:ring-2  dark:focus:ring-teal-400 focus:ring-gray-600'
                 type='search'
                 size={50}
