@@ -53,14 +53,15 @@ export default function RootLayout({
                                     className="dark:block hidden"
                                     src={Logo_Dark}
                                     alt="logo"
-                                    width={250}
+                                    width={64}
                                     height={64}
+                                    loading="eager"
                                 />
                                 <Image
                                     className="block dark:hidden"
                                     src={Logo}
                                     alt="logo"
-                                    width={250}
+                                    width={64}
                                     height={64}
                                 />
                             </Link>

@@ -21,11 +21,11 @@ const Card = ({ entry, showJson }: CardProps) => {
     const currentTheme = resolvedTheme || theme
 
     return (
-        <div className='flex flex-col min-w-40 p-2 m-1 border-2 border-gray-400 rounded-xl' data-testid='card'>
+        <div className='flex flex-col min-w-40 p-2 m-1 border-2 border-gray-400 rounded-xl text-red dark:text-teal-600 font-bold text-center' data-testid='card'>
             <Link href={`/releases/${entry.alias}`}>
-                <h1 className='text-red dark:text-teal-600 font-bold text-center'>{entry.alias}</h1>
-                <h2 className='text-red dark:text-teal-600 font-bold text-center'>{entry.url}</h2>
-                <h3 className='text-red dark:text-teal-600 font-bold text-center'>{entry.owner}</h3>
+                <h1 className='text-2xl'>{entry.alias}</h1>
+                <h2>{entry.url}</h2>
+                <h3>{entry.owner}</h3>
                 {entry.tags && entry.tags.length > 0 &&
                     <div className=''>
                         {/* <h4 className='di'>Tags:</h4><span className='pa2' /> */}

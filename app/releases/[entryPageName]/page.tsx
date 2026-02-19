@@ -6,23 +6,22 @@ import { type EntryInterface } from '@utils/EntryInterface';
 export default async function Package({
     params,
 }: {
-    params: Promise<{ entry: string }>
+    params: Promise<{ entryPageName: string }>
 }) {
-    const { entry } = await params;
-    console.log('entry:', entry);
+    const { entryPageName } = await params;
+    console.log('entry:', entryPageName);
 
-    let cleanEntry = entry.replace("%20", " ");
     // Read and parse the JSON file
     const filePath = path.join(process.cwd(), 'public/app-database.json');
     const fileContents = await readFile(filePath, 'utf8');
     const packages: Record<string, EntryInterface> = JSON.parse(fileContents);
 
     // Find the matching package - first try exact match, then case-insensitive
-    let releasePackage: EntryInterface | undefined = packages[cleanEntry];
+    let releasePackage: EntryInterface | undefined = packages[entryPageName];
 
     if (!releasePackage) {
         // Try case-insensitive search
-        const entryLower = cleanEntry.toLowerCase();
+        const entryLower = entryPageName.toLowerCase();
         const matchingKey = Object.keys(packages).find(key => key.toLowerCase() === entryLower);
         releasePackage = matchingKey ? packages[matchingKey] : undefined;
     }
@@ -30,7 +29,7 @@ export default async function Package({
     if (!releasePackage) {
         return (
             <div className="flex min-h-screen items-center justify-center">
-                <p>Package "{cleanEntry}" not found</p>
+                <p>Entry "{entryPageName}" not found</p>
             </div>
         );
     }
@@ -64,7 +63,7 @@ export default async function Package({
 
                     {releasePackage.alias && releasePackage.alias.length > 0 ||
                         <div className="flex flex-col mt-16">
-                            <div>No package description created yet</div>
+                            <div>No entry description created yet</div>
                         </div>
                     }
 
