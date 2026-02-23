@@ -36,28 +36,19 @@ export default async function Package({
 
     return (
         <div className="flex items-center justify-center font-sans">
-            <div className="flex max-w-3xl flex-col items-center justify-center py-16 px-16 sm:items-start">
-                <h1 className="max-w-xs text-3xl font-semibold">
+            <div className="flex max-w-3xl flex-col py-16 px-16 sm:items-start">
+                <h1 className="self-center text-3xl font-semibold text-center">
                     {releasePackage.alias}
                 </h1>
-                {releasePackage.tags && releasePackage.tags.length > 0 &&
-                    <div className=''>
-                        {releasePackage.tags.map((tag) => (
-                            <span key={tag} className='text-xs m-1 border border-gray-600'>#{tag.replace('shared', 'cross-platform')}</span>
-                        ))}
-                    </div>
-                }
 
                 <div className="flex items-center gap-6 text-center sm:items-start sm:text-left">
 
                     {releasePackage.alias && releasePackage.alias.length > 0 &&
                         <div className='flex-col rounded-lg p-6 mt-4 border border-gray-600'>
                             <h2 className="text-xl font-semibold mb-4">Entry Information</h2>
-                            <Link key={releasePackage.alias} href={releasePackage.alias}>
-                                <div className="border border-teal-600 m-2 p-2 rounded-xl text-xs text-center">
-                                    {path.basename(releasePackage.alias)}
-                                </div>
-                            </Link>
+                            <div className="border border-teal-600 m-2 p-2 rounded-xl text-l text-center">
+                                {releasePackage.url}
+                            </div>
                         </div>
                     }
 

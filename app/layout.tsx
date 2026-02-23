@@ -47,8 +47,8 @@ export default function RootLayout({
                 light version uses CSS class "block dark:hidden".
                 Include both
               ***********************************************************************/}
-                        <div className="flex flex-row w-full px-4 items-center justify-between">
-                            <Link href="/" className="flex-shrink-0">
+                        <div className="flex justify-center m-2">
+                            <Link href="/" className="flex-shrink-0 absolute m-2 top-0 left-0">
                                 <Image
                                     className="dark:block hidden"
                                     src={Logo_Dark}
@@ -66,11 +66,11 @@ export default function RootLayout({
                                 />
                             </Link>
 
-                            <h1 className="leading-none text-xl font-semibold text-black dark:text-zinc-50 text-center flex-1">
+                            <h1 className="text-5xl font-bold text-black dark:text-zinc-50">
                                 Go-To
                             </h1>
 
-                            <div className="flex-shrink-0">
+                            <div className="flex-shrink-0 absolute m-2 top-0 right-0">
                                 <ThemeSwitch />
                             </div>
                         </div>
